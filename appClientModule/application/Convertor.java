@@ -26,9 +26,6 @@ public class Convertor {
 
 	public Board convert(String jsonContent) {
 
-		
-		
-		
 		Board b = new Board();
 		Gson gson = new GsonBuilder().create();
 
@@ -37,7 +34,6 @@ public class Convertor {
 
 		JsonObject jsonObject = gson.fromJson(jsonContent, JsonObject.class);
 
-		
 		System.out.println("\n\n\n\nGetBoard JSON :" + jsonObject.get("playerBoards"));
 		
 		List<EpicHeroesLeague> yourClassList = new Gson().fromJson(jsonObject.get("playerBoards"), listType);

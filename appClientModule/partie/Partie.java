@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import application.Api;
 import application.Convertor;
 import exceptions.InvalidChoiceException;
 import exceptions.InvalidStatusException;
@@ -19,23 +20,15 @@ import ia.Priest_IA;
 
 public class Partie {
 
-	// Toutes les URIS sont là sauf pour avoir l'id d'équipe //
-	private final String URL_ID_PARTIE_VS = "/versus/next";
-	private final String URL_ID_PARTIE_IA = "/practice/new";
-	private final String URL_STATUS = "/game/status";
-	private final String URL_BOARD = "/game/board";
-	private final String URL_LAST_MOVE = "/game/getlastmove";
-	private final String URL_PLAY = "/game/play";
-	private final String URL_NAME_ADV = "/game/opponent";
+
 
 	private int choix;
 	
 	private String idPartie;
 	private String idEquipe;
-	private String url;
-	private String format;
 	private Status statut;
 	private int nbTours; 
+	private Api apiCaller; 
 	
 	private Board board;
 	
@@ -50,12 +43,14 @@ public class Partie {
 	public Partie(String url, String idEquipe, String format, int choix)
 			throws IOException, InvalidChoiceException, InterruptedException {
 
-		this.url = url;
+
 		this.idEquipe = idEquipe;
-		this.format = format;
+
 		this.choix = choix;
 		this.idPartie = "NA";
 		this.nbTours = 1;
+		
+		apiCaller = new Api(url,format);
 		
 		convert = new Convertor();
 		bot = new Ia();
@@ -84,11 +79,11 @@ public class Partie {
 				// Choix == -1 - On va jouer en mode VS //
 				if (this.choix == -1) {
 
-					this.idPartie = NextGame();
+					this.idPartie = apiCaller.nextGame(idEquipe);
 
 					while (idPartie.equals("NA")) {
 						Thread.sleep(500);
-						this.idPartie = NextGame();
+						this.idPartie = apiCaller.nextGame(idEquipe);
 					}
 					
 					// On a un identifiant de la partie, on peut commencer à jouer
@@ -109,11 +104,11 @@ public class Partie {
 
 					// Level ok //
 
-					this.idPartie = NewGame();
+					this.idPartie = apiCaller.newGame(Integer.toString(choix), idEquipe);
 
 					while (idPartie.equals("NA")) {
 						Thread.sleep(500);
-						this.idPartie = NewGame();
+						this.idPartie = apiCaller.newGame(Integer.toString(choix), idEquipe);
 					}
 					
 					// On a un identifiant de la partie, on peut commencer à jouer
@@ -128,25 +123,7 @@ public class Partie {
 				}
 	}
 
-	public String NewGame() throws IOException {
 
-		String res;
-
-		System.out.println("Demande de jouer en mode Practice niveau : '" + choix + "'");
-		res = get(url + URL_ID_PARTIE_IA  + "/" + choix + "/" + idEquipe);
-		System.out.println("Réponse : '" + res + "'");
-		return res;
-	}
-
-	public String NextGame() throws IOException {
-
-		String res;
-
-		System.out.println("Demande de jouer en mode VS");
-		res = get(url + URL_ID_PARTIE_VS  + "/" + idEquipe);
-		System.out.println("Réponse : '" + res + "'");
-		return res;
-	}
 	/*
 	 *  ----------- FIN PARTIE INITIALISATION -------
 	 */
@@ -156,37 +133,20 @@ public class Partie {
 	 * ------------ METHODES WORKFLOW ------------
 	 */
 	
+	public void UpdateBoard() throws InvalidStatusException, IOException{
+		
+		String response = apiCaller.GetBoard(idPartie); 
 	
-	
-	
-	
-	public void GetStatus() throws InvalidStatusException {
-
-		try {
-			String response = get(url + URL_STATUS + "/" + this.idPartie + "/" + this.idEquipe);
-			this.statut =Status.valueOf(response);
-			System.out.println("\n\nStatut: " + statut);
-			
-		} catch (Exception e) {
-			throw new InvalidStatusException("Erreur lors de la récupération du status récupéré : '" + statut.toString() + "'" );
-		}
-	}
-	
-	
-	public void GetBoard() throws InvalidStatusException, IOException {
-
-	
-			String response = "";
-			response = get(url + URL_BOARD + "/" + this.idPartie + "?format=" + this.format);
-			
-			System.out.println("\n\n getboardResponse :" + response);
-			
-			board = convert.convert(response);
-			
-			System.out.println(board);
-			
+		this.board = convert.convert(response);
 		
 	}
+	
+	
+	
+
+	
+	
+
 	
 	public void Play()  {
 		
@@ -210,12 +170,12 @@ public class Partie {
 	public void Jouer() throws InterruptedException, IOException, InvalidStatusException {
 
 	
-		GetStatus();
-		
+		this.statut = apiCaller.GetStatus(idPartie, idEquipe);
+		String response = "";
 		
 		while(!finPartie()){
 			// On met à jour le status de la partie // 
-			GetStatus();
+			this.statut = apiCaller.GetStatus(idPartie, idEquipe);
 		
 			while(statut.equals(Status.CANTPLAY)){
 				System.out.println("Status CANT PLAY, statut :" + statut + "" );
@@ -225,7 +185,7 @@ public class Partie {
 			if(statut.equals(Status.CANPLAY)){
 				System.out.println("Status CANPLAY, statut :" + statut + "" );
 				// On récupère le board // 
-				GetBoard();
+				UpdateBoard();
 			
 				if(nbTours<4){
 
@@ -245,16 +205,16 @@ public class Partie {
 						ia = new Guard_IA(); 
 						break;
 					}
-					
-					get(url+URL_PLAY+"/"+idPartie+"/"+idEquipe+"/"+perso);
-					
+						
+					response = apiCaller.Jouer(this.idPartie, this.idEquipe,perso);
+					System.out.println(response);
 					this.lescerveaux.add(ia);
 					
 					Thread.sleep(500);
 				
 				} else {
 					
-					String response = ""; 
+					String input = "";
 					String joueur = ""; 
 					String cible = ""; 
 					String coup = ""; 
@@ -269,21 +229,25 @@ public class Partie {
 						
 						joueur = "A" + numeroJoueur; 
 						
-						coup = ia.Jouer();
+						coup = ia.Jouer(board);
 						
 						cible = ia.choisirCible(board);
 						
-						response += joueur +","+ coup + "," + cible; 
+						input += joueur +","+ coup + "," + cible; 
 						
 						if(index!=lescerveaux.size()-1){
-							response += "$";
+							input += "$";
 						}
 					}
 					
 					
-					System.out.println("Coup :" + response);
+					System.out.println("Coup :" + input);
 					Thread.sleep(500);
-					System.out.println(get(url+URL_PLAY+"/"+idPartie+"/"+idEquipe+"/"+response));
+					
+					
+					response = apiCaller.Jouer(this.idPartie, this.idEquipe, input);
+					
+					System.out.println("reponse après joué :" + response);
 				}			
 					this.nbTours++;
 			}
@@ -292,6 +256,8 @@ public class Partie {
 			
 			
 		} 
+		
+		System.out.println(statut);
 	} // Fin jouer //
 
 	
@@ -318,35 +284,8 @@ public class Partie {
 	}
 	
 
-	
-	/*
-	 * ------------ METHODE POUR CONTACTER LE SERVEUR ------------
-	 */
 
-	public static String get(String url) throws IOException {
 
-		String res = "";
-
-		URL oracle = null;
-		try {
-			oracle = new URL(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		BufferedReader in = new BufferedReader(new InputStreamReader(oracle.openStream()));
-
-		String inputLine;
-		while ((inputLine = in.readLine()) != null)
-			res = inputLine;
-		in.close();
-
-		return res;
-	}
-	/*
-	 * ------------ FIN METHODE POUR CONTACTER LE SERVEUR ------------
-	 */
-
-	
 
 	/*
 	 * ------------ METHODES GENERIQUES  ------------

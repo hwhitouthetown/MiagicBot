@@ -8,14 +8,10 @@ import partie.Board;
 public class Ia {
 
 	EpicHero hero;
-	private int pdvCritique;
+	protected int pdvCritique;
 
-	public String coupOffensif() {
+	public String coup(Board b) {
 		return "ATTACK";
-	}
-
-	public String coupDeffensif() {
-		return "DEFEND";
 	}
 
 	public String choisirCible(Board board) {
@@ -59,15 +55,9 @@ public class Ia {
 
 	/*
 	 * stratégie : défensive ou offensive ?
+	 * return string with coup + "," + target
 	 */
-	public String Jouer() {
-
-		if (hero.getCurrentLife() == 0) {
-			return "REST";
-		} else if (hero.getCurrentLife() <= pdvCritique) {
-			return coupDeffensif();
-		} else {
-			return coupOffensif();
-		}
+	public String Jouer(Board b) {
+		return coup(b) + "," + choisirCible(b);
 	}
 }

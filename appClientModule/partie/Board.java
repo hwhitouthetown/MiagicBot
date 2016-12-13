@@ -15,7 +15,6 @@ public class Board {
 			
 		this.miagicBot = miagicBot;
 		this.adversaire = adversaire; 
-		
 		this.nbTurnsLeft = nbTurnsLeft;
 	}
 

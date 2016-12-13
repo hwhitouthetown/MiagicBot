@@ -1,17 +1,11 @@
 package ia;
 
+import partie.Board;
+
 public class Priest_IA extends Ia {
 
 	@Override
-	public String coupOffensif() {
-		// TODO Auto-generated method stub
+	public String coup(Board b) {
 		return "ATTACK";
 	}
-
-	@Override
-	public String coupDeffensif() {
-		// TODO Auto-generated method stub
-		return "DEFEND";
-	}
-
 }
