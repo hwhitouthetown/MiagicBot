@@ -59,7 +59,7 @@ public class Api {
 
 			String response = get(url + URL_STATUS + "/" + idPartie + "/" + idEquipe);
 			
-			System.out.println(response);
+			System.out.println("Dans API-GETSTATUS "+response);
 			
 			return Status.valueOf(response);
 	}

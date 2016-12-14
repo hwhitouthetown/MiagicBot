@@ -156,12 +156,13 @@ public class Partie {
 				System.out.println("\nj ->" + dol[j]);	
 				
 				 String tab[] = dol[j].split(",");
-					
-				 this.board.getAdversaire().getFighters().get(i).addCoups(tab[1]+","+tab[2]);
+				 
+				 if(tab.length>2){
+					this.board.getAdversaire().getFighters().get(i).addCoups(tab[1]+","+tab[2]);
+				 }
 				
 			i++;
-			}
-			
+			}	
 		}
 		
 		board.afficherCoupAdversaires();
@@ -194,10 +195,13 @@ public class Partie {
 		
 			while(statut.equals(Status.CANTPLAY)){
 				System.out.println("Status CANT PLAY, statut :" + statut + "" );
+				this.statut = apiCaller.GetStatus(idPartie, idEquipe);
 				Thread.sleep(500);
 			}
-		
+
 			if(statut.equals(Status.CANPLAY)){
+				this.statut = apiCaller.GetStatus(idPartie, idEquipe);
+
 				System.out.println("Status CANPLAY, statut :" + statut + "" );
 				// On récupère le board // 
 				UpdateBoard();
@@ -211,17 +215,23 @@ public class Partie {
 					switch(perso){
 					
 					case("GUARD"): 
-						ia = new Guard_IA(); 
+						ia = new Guard_IA();
+						break;
 					case("PRIEST"): 
-						ia = new Priest_IA(); 
+						ia = new Priest_IA();
+						break;
 					case("ORC"): 	
 						ia = new Orc_IA();
+						break;
 					case("PALADIN"): 	
 						ia = new Paladin_IA();
+						break;
 					case("ARCHER"): 	
 						ia = new Archer_IA();
+						break;
 					case("CHAMAN"): 	
 						ia = new Chaman_IA();
+						break;
 					default : 
 						ia = new Guard_IA(); 
 						break;
@@ -243,6 +253,7 @@ public class Partie {
 
 					
 					for(Ia ia: lescerveaux){
+						
 						
 						int index = lescerveaux.indexOf(ia);
 						
@@ -270,6 +281,8 @@ public class Partie {
 					
 					System.out.println("reponse après joué :" + response);
 					UpdateCoups();
+					UpdateBoard();
+					this.statut = apiCaller.GetStatus(idPartie, idEquipe);
 				}			
 					this.nbTours++;
 			}
@@ -294,15 +307,10 @@ public class Partie {
 	
 	private void updateIaPlayer(){
 		
-		for(EpicHero ep : board.getMiagicBot().getFighters()){
-			
-			for(Ia ia : lescerveaux){
-				ia.updateData(ep);
-			}
-			
-			
-		}
 		
+			for(int i=0;i<this.board.getMiagicBot().getFighters().size();i++){				
+				lescerveaux.get(i).updateData(this.board.getMiagicBot().getFighters().get(i));
+			}	
 	}
 	
 

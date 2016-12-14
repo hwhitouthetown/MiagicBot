@@ -63,7 +63,7 @@ public class BattleMain {
 			case "-m":
 				niveau = -1;
 				System.out.println("On va joueur contre un autre joueur");
-				idEquipe = get(URL_ID_EQUIPE + "/" + name + "/" + "password");
+				idEquipe = get(serverUrl + URL_ID_EQUIPE + "/" + name + "/" + password);
 				System.out.println("Id equipe :" + idEquipe);
 
 				Partie p = new Partie( serverUrl, idEquipe, format, niveau);

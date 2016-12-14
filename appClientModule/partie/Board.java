@@ -2,6 +2,7 @@ package partie;
 
 import com.google.gson.annotations.Expose;
 
+import heroes.EpicHero;
 import heroes.EpicHeroesLeague;
 
 
@@ -57,6 +58,16 @@ public class Board {
 
 			}	
 		}
+	}
+	
+	public boolean canDefend(){
+		boolean res = true;
+		for(EpicHero ep : miagicBot.getFighters()){
+			if(ep.isDefending()){
+				res = false;
+			}
+		}
+		return res;
 	}
 
 	@Override

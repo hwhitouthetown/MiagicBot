@@ -13,7 +13,7 @@ public class EpicHero {
 	private ArrayList<String> coups;
 	private ArrayList<State> states;
 	private String fighterID;
-	private static int criticalLife = 6;
+	private static int criticalLife = 20;
 	
 	public EpicHero(String fighterClass, int orderNumberInTeam, boolean isDead, int maxAvailableMana,
 			int maxAvailableLife, int currentMana, int currentLife, ArrayList<State> states, String fighterId) {
@@ -92,12 +92,52 @@ public class EpicHero {
 	
 	public boolean isYelled(){
 		boolean res = false;
-		for(State state : states){
-			if(state.getType().equals("SCARED")){
-				res = true;
+		if (states != null){
+			for(State state : states){
+				if(state.getType().equals("SCARED")){
+					res = true;
+				}
 			}
 		}
 		return res;
+	}
+	
+	public boolean isProtected(){
+		boolean res = false;
+		if (states != null){
+			for(State state : states){
+				if(state.getType().equals("PROTECTED")){
+					res = true;
+				}
+			}
+		}
+		return res;
+	}
+	
+	public boolean isDefending(){
+		boolean res = false;
+		if (states != null){
+			for(State state : states){
+				if(state.getType().equals("DEFENDING")){
+					res = true;
+				}
+			}
+		}
+		return res;
+	}
+	public void addState(String state){
+		
+		if(this.coups==null){				
+			this.states = new ArrayList<State>();
+		}
+		
+		System.out.println("ajouter state");
+		
+		State s = new State();
+		
+		s.setType(state);
+		
+		this.states.add(s);
 	}
 	
 	public void addCoups(String coup){

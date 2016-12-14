@@ -10,9 +10,10 @@ public class Ia {
 	EpicHero hero;
 	protected int pdvCritique;
 	String target;
+	EpicHero hTarget;
 	String coup;
-	String[] focus = {"PRIEST","CHAMAN","ORC","GUARD","ARCHER","PALADIN" };
-	
+	String[] focus = {"ARCHER","ORC","GUARD","PRIEST","CHAMAN","PALADIN" };
+	public boolean readyToAttack = false;
 
 	public void coup(Board b) {
 		
@@ -23,17 +24,20 @@ public class Ia {
 
 	public void choisirCible(Board board) {
 		String response = "";
-
+		int indexFocus = 0;
 		ArrayList<EpicHero> equipe_adv = board.getAdversaire().getFighters();
 
 		for (EpicHero ep : equipe_adv) {
+			for (String focus: focus){
+				if((focus.equals(ep.getFighterClass()) || ep.isCritical() || ep.isYelled())&& !ep.isDead()){
+					if (ep.isYelled()){
+						readyToAttack = true;
+					}
+					int index = equipe_adv.indexOf(ep) +1;
+					response = "E" + index ;
+				}
 
-			if (!ep.isDead())
-			{
-				int index = equipe_adv.indexOf(ep) +1; 
-				response = "E" + index ;
 			}
-
 		}
 		this.target = response;
 	}
@@ -51,9 +55,9 @@ public class Ia {
 		if (joueurAdv == null) {
 			typeJoueur = "GUARD";
 		} else if (joueurAdv.size() == 1) {
-			typeJoueur = "PALADIN";
+			typeJoueur = "ARCHER";
 		} else {
-			typeJoueur = "ORC";
+			typeJoueur = "PRIEST";
 		}
 		
 		System.out.println("\n Choix du personnage :" + typeJoueur );
