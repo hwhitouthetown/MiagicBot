@@ -19,9 +19,6 @@ import ia.Orc_IA;
 import ia.Priest_IA;
 
 public class Partie {
-
-
-
 	private int choix;
 	
 	private String idPartie;
@@ -231,7 +228,7 @@ public class Partie {
 						
 						coup = ia.Jouer(board);
 						
-						cible = ia.choisirCible(board);
+						 ia.choisirCible(board);
 						
 						input += joueur +","+ coup + "," + cible; 
 						

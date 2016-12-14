@@ -30,6 +30,13 @@ public class Api {
 	}
 	
 	
+	// /epic-ws/epic/game/getlastmove/{idPartie}/{idEquipe}
+	
+	public String getLastMove(String idPartie,String idEquipe) throws IOException{
+		
+		return get(url+ URL_LAST_MOVE + "/" + idPartie + "/" + idEquipe);
+	}
+	
 	public String newGame(String choix, String idEquipe) throws IOException{
 		String res;
 		System.out.println("Demande de jouer en mode Practice niveau : '" + choix + "'");
@@ -51,6 +58,8 @@ public class Api {
 
 
 			String response = get(url + URL_STATUS + "/" + idPartie + "/" + idEquipe);
+			
+			System.out.println(response);
 			
 			return Status.valueOf(response);
 	}

@@ -10,8 +10,10 @@ public class EpicHero {
 	private int maxAvailableLife; 
 	private int currentMana; 
 	private int currentLife; 
+	private ArrayList<String> coups;
 	private ArrayList<State> states;
 	private String fighterID;
+	private static int criticalLife = 6;
 	
 	public EpicHero(String fighterClass, int orderNumberInTeam, boolean isDead, int maxAvailableMana,
 			int maxAvailableLife, int currentMana, int currentLife, ArrayList<State> states, String fighterId) {
@@ -78,6 +80,32 @@ public class EpicHero {
 	}
 	public void setFighterId(String fighterId) {
 		this.fighterID = fighterId;
+	}
+	
+	public boolean isCritical(){
+		return this.currentLife <= criticalLife;
+	}
+	
+	public boolean isYelled(){
+		boolean res = false;
+		for(State state : states){
+			if(state.getType().equals("SCARED")){
+				res = true;
+			}
+		}
+		return res;
+	}
+	
+	public void addCoups(String coup){
+		this.coups.add(coup);
+	}
+	
+	public ArrayList<String> getCoups() {
+		return coups;
+	}
+	
+	public void setCoups(ArrayList<String> coups) {
+		this.coups = coups;
 	}
 	
 	@Override

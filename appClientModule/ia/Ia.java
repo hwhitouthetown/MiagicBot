@@ -9,25 +9,33 @@ public class Ia {
 
 	EpicHero hero;
 	protected int pdvCritique;
+	String target;
+	String coup;
+	String[] focus = {"PRIEST", "GUARD", "ORC"};
+	
 
-	public String coup(Board b) {
-		return "ATTACK";
+	public void coup(Board b) {
+		
+		this.choisirCible(b);
+		
+		this.coup = "ATTACK";
 	}
 
-	public String choisirCible(Board board) {
+	public void choisirCible(Board board) {
 		String response = "";
 
 		ArrayList<EpicHero> equipe_adv = board.getAdversaire().getFighters();
 
 		for (EpicHero ep : equipe_adv) {
 
-			if (!ep.isDead()) {
+			if (!ep.isDead())
+			{
 				int index = equipe_adv.indexOf(ep) +1; 
 				response = "E" + index ;
 			}
 
 		}
-		return response;
+		this.target = response;
 	}
 
 	// Procedure pour mettre à jour les données du hero de l'IA //
@@ -58,6 +66,8 @@ public class Ia {
 	 * return string with coup + "," + target
 	 */
 	public String Jouer(Board b) {
-		return coup(b) + "," + choisirCible(b);
+		this.coup(b);
+		
+		return this.coup + "," +  this.target;
 	}
 }

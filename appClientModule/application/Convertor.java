@@ -55,5 +55,11 @@ public class Convertor {
 		return b;
 
 	}
+	
+	public void retrieveLastCoup(Board b){
+		Api api = new Api("http://codeandplay.date/","xml");
+		
+		
+	}
 
 }

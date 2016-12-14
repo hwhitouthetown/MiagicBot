@@ -12,7 +12,6 @@ public class Board {
 	private EpicHeroesLeague adversaire; 
 	
 	public Board(EpicHeroesLeague miagicBot,EpicHeroesLeague adversaire, int nbTurnsLeft){
-			
 		this.miagicBot = miagicBot;
 		this.adversaire = adversaire; 
 		this.nbTurnsLeft = nbTurnsLeft;

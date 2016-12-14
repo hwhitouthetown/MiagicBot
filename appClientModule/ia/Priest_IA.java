@@ -5,7 +5,8 @@ import partie.Board;
 public class Priest_IA extends Ia {
 
 	@Override
-	public String coup(Board b) {
-		return "ATTACK";
+	public void coup(Board b) {
+		choisirCible( b);
+		this.coup = "ATTACK";
 	}
 }
