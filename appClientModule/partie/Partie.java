@@ -229,7 +229,7 @@ public class Partie {
 					case("ARCHER"): 	
 						ia = new Archer_IA();
 						break;
-					case("CHAMAN"): 	
+					case("CHAMAN"):
 						ia = new Chaman_IA();
 						break;
 					default : 
@@ -283,6 +283,7 @@ public class Partie {
 					UpdateCoups();
 					UpdateBoard();
 					this.statut = apiCaller.GetStatus(idPartie, idEquipe);
+
 				}			
 					this.nbTours++;
 			}
