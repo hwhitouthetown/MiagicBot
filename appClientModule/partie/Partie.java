@@ -139,20 +139,34 @@ public class Partie {
 	}
 	
 	
-	
-
-	
-	
-
-	
-	public void Play()  {
+	public void UpdateCoups() throws IOException, InterruptedException{
 		
+		String response = apiCaller.getLastMove(idPartie, idEquipe);
 		
+		System.out.println("response: "+response);
 		
-
+		if(!response.equals("NA")){
+			int i=0; 
+			String[] dol = response.split("\\$");
+			for(int j=0;j<dol.length;j++){
+			 
+				System.out.println("\nj ->" + dol[j]);	
+				
+				 String tab[] = dol[j].split(",");
+					
+				 this.board.getAdversaire().getFighters().get(i).addCoups(tab[1]+","+tab[2]);
+				
+			i++;
+			}
+			
+		}
 		
+		board.afficherCoupAdversaires();
 	}
 	
+	
+
+
 	
 	/*
 	 * ------------ FIN METHODES WORKFLOW ------------
@@ -168,6 +182,7 @@ public class Partie {
 
 	
 		this.statut = apiCaller.GetStatus(idPartie, idEquipe);
+	
 		String response = "";
 		
 		while(!finPartie()){
@@ -212,13 +227,11 @@ public class Partie {
 				} else {
 					
 					String input = "";
-					String joueur = ""; 
-					String cible = ""; 
+					String joueur = "";  
 					String coup = ""; 
 				
 					updateIaPlayer();
-					
-						
+
 					
 					for(Ia ia: lescerveaux){
 						
@@ -232,7 +245,7 @@ public class Partie {
 						
 						ia.choisirCible(board);
 						
-						input += joueur +","+ coup + "," + cible; 
+						input += joueur +","+ coup; 
 						
 						if(index!=lescerveaux.size()-1){
 							input += "$";
@@ -247,6 +260,7 @@ public class Partie {
 					response = apiCaller.Jouer(this.idPartie, this.idEquipe, input);
 					
 					System.out.println("reponse après joué :" + response);
+					UpdateCoups();
 				}			
 					this.nbTours++;
 			}
