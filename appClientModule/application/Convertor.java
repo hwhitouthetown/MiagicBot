@@ -56,8 +56,8 @@ public class Convertor {
 
 	}
 	
-	public void retrieveLastCoup(Board b){
-		Api api = new Api("http://codeandplay.date/","xml");
+	public void retrieveLastCoup(String content){
+		
 		
 		
 	}

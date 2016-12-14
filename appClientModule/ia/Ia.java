@@ -11,7 +11,7 @@ public class Ia {
 	protected int pdvCritique;
 	String target;
 	String coup;
-	String[] focus = {"PRIEST", "GUARD", "ORC"};
+	String[] focus = {"PRIEST","CHAMAN","ORC","GUARD","ARCHER","PALADIN" };
 	
 
 	public void coup(Board b) {
@@ -49,11 +49,11 @@ public class Ia {
 		String typeJoueur = "";
 
 		if (joueurAdv == null) {
-			typeJoueur = "ORC";
+			typeJoueur = "CHAMAN";
 		} else if (joueurAdv.size() == 1) {
-			typeJoueur = "PRIEST";
+			typeJoueur = "PALADIN";
 		} else {
-			typeJoueur = "GUARD";
+			typeJoueur = "ORC";
 		}
 		
 		System.out.println("\n Choix du personnage :" + typeJoueur );

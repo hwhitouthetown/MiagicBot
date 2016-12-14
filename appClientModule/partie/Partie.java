@@ -218,6 +218,8 @@ public class Partie {
 				
 					updateIaPlayer();
 					
+						
+					
 					for(Ia ia: lescerveaux){
 						
 						int index = lescerveaux.indexOf(ia);
@@ -228,7 +230,7 @@ public class Partie {
 						
 						coup = ia.Jouer(board);
 						
-						 ia.choisirCible(board);
+						ia.choisirCible(board);
 						
 						input += joueur +","+ coup + "," + cible; 
 						
@@ -293,7 +295,7 @@ public class Partie {
 	 * Permet de savoir si une partie est terminée 
 	 */
 	public boolean finPartie(){
-		return (statut.equals(Status.CANCELLED) || statut.equals(Status.DEFEAT) ||statut.equals(Status.VICTORY));
+		return (statut.equals(Status.DRAW)||statut.equals(Status.CANCELLED) || statut.equals(Status.DEFEAT) ||statut.equals(Status.VICTORY));
 	}
 	
 	/*
