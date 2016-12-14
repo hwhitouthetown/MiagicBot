@@ -66,7 +66,7 @@ public class Ia {
 	 * return string with coup + "," + target
 	 */
 	public String Jouer(Board b) {
-		this.coup(b);
+		coup(b);
 		
 		return this.coup + "," +  this.target;
 	}

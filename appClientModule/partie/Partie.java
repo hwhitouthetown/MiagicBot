@@ -13,9 +13,12 @@ import application.Convertor;
 import exceptions.InvalidChoiceException;
 import exceptions.InvalidStatusException;
 import heroes.EpicHero;
+import ia.Archer_IA;
+import ia.Chaman_IA;
 import ia.Guard_IA;
 import ia.Ia;
 import ia.Orc_IA;
+import ia.Paladin_IA;
 import ia.Priest_IA;
 
 public class Partie {
@@ -213,6 +216,12 @@ public class Partie {
 						ia = new Priest_IA(); 
 					case("ORC"): 	
 						ia = new Orc_IA();
+					case("PALADIN"): 	
+						ia = new Paladin_IA();
+					case("ARCHER"): 	
+						ia = new Archer_IA();
+					case("CHAMAN"): 	
+						ia = new Chaman_IA();
 					default : 
 						ia = new Guard_IA(); 
 						break;
