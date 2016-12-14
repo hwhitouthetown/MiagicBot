@@ -6,15 +6,19 @@ import heroes.EpicHero;
 import partie.Board;
 
 public class Orc_IA extends Ia {
-
 	@Override
 	public void coup(Board b) {
-		String coup = "ATTACK";
-		this.choisirCible(b);
-		if(this.hero.getMaxAvailableMana() < 2){
-			
-		}
-		this.coup = coup;
+        String coup = "REST";
+        this.choisirCible(b);
+        if(this.hero.getCurrentMana() >= 2 && !readyToAttack){
+            coup = "YELL";
+        }else if(readyToAttack){
+            coup = "ATTACK";
+        }
+        if (this.hero.isYelled()){
+            coup = "DEFEND";
+        }
+        this.coup = coup;
 	}
 	
 	@Override
@@ -25,8 +29,11 @@ public class Orc_IA extends Ia {
 
 		for (EpicHero ep : equipe_adv) {
 			if((this.focus[indexFocus].equals(ep.getFighterClass()) || ep.isCritical() || ep.isYelled())&& !ep.isDead()){
-					int index = equipe_adv.indexOf(ep) +1; 
-					response = "E" + index ;
+			    if (ep.isYelled()){
+			        readyToAttack = true;
+                }
+                int index = equipe_adv.indexOf(ep) +1;
+				response = "E" + index ;
 			}else{
 				indexFocus++;
 			}

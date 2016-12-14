@@ -1,6 +1,3 @@
 Manifest-Version: 1.0
-Built-By: hugosanslaville
-Build-Jdk: 1.8.0_71
-Created-By: Maven Integration for Eclipse
 Main-Class: Main
 

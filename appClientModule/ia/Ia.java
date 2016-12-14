@@ -11,8 +11,8 @@ public class Ia {
 	protected int pdvCritique;
 	String target;
 	String coup;
-	String[] focus = {"PRIEST","CHAMAN","ORC","GUARD","ARCHER","PALADIN" };
-	
+	String[] focus = {"PRIEST","CHAMAN","ORC","ARCHER","PALADIN","GUARD" };
+	public boolean readyToAttack = false;
 
 	public void coup(Board b) {
 		
@@ -66,7 +66,7 @@ public class Ia {
 	 * return string with coup + "," + target
 	 */
 	public String Jouer(Board b) {
-		this.coup(b);
+		coup(b);
 		
 		return this.coup + "," +  this.target;
 	}
