@@ -14,8 +14,6 @@ public class Chaman_IA extends Ia{
             coup = "ATTACK";
         }else if(readyToAttack){
             coup = "ATTACK";
-        }else{
-            coup = "REST";
         }
         if (this.hero.isYelled()){
             coup = "DEFEND";

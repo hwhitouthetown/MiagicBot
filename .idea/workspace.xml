@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="499cf14d-a839-4cf2-90cb-c5f2cfc37fbd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/heroes/EpicHero.class" afterPath="$PROJECT_DIR$/target/classes/heroes/EpicHero.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ia/Chaman_IA.class" afterPath="$PROJECT_DIR$/target/classes/ia/Chaman_IA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ia/Guard_IA.class" afterPath="$PROJECT_DIR$/target/classes/ia/Guard_IA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ia/Ia.class" afterPath="$PROJECT_DIR$/target/classes/ia/Ia.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ia/Orc_IA.class" afterPath="$PROJECT_DIR$/target/classes/ia/Orc_IA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ia/Paladin_IA.class" afterPath="$PROJECT_DIR$/target/classes/ia/Paladin_IA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/partie/Board.class" afterPath="$PROJECT_DIR$/target/classes/partie/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/partie/Partie.class" afterPath="$PROJECT_DIR$/target/classes/partie/Partie.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/heroes/EpicHero.java" afterPath="$PROJECT_DIR$/appClientModule/heroes/EpicHero.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/ia/Chaman_IA.java" afterPath="$PROJECT_DIR$/appClientModule/ia/Chaman_IA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/ia/Guard_IA.java" afterPath="$PROJECT_DIR$/appClientModule/ia/Guard_IA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/ia/Ia.java" afterPath="$PROJECT_DIR$/appClientModule/ia/Ia.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/ia/Orc_IA.java" afterPath="$PROJECT_DIR$/appClientModule/ia/Orc_IA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java" afterPath="$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/partie/Board.java" afterPath="$PROJECT_DIR$/appClientModule/partie/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appClientModule/partie/Partie.java" afterPath="$PROJECT_DIR$/appClientModule/partie/Partie.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,8 +47,8 @@
       <file leaf-file-name="Paladin_IA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="195">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,8 +59,8 @@
       <file leaf-file-name="Chaman_IA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appClientModule/ia/Chaman_IA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="120">
+              <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Orc_IA.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Orc_IA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appClientModule/ia/Orc_IA.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -125,18 +130,18 @@
       <file leaf-file-name="Ia.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appClientModule/ia/Ia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="690">
               <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Guard_IA.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Guard_IA.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appClientModule/ia/Guard_IA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="83">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -145,8 +150,8 @@
       <file leaf-file-name="Partie.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appClientModule/partie/Partie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="227" column="36" lean-forward="true" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
+            <state relative-caret-position="177">
+              <caret line="278" column="34" lean-forward="false" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -172,6 +177,7 @@
     <findStrings>
       <find>sle</find>
       <find>slee</find>
+      <find>repon</find>
       <find>CHAMA</find>
     </findStrings>
   </component>
@@ -188,12 +194,12 @@
       <list>
         <option value="$PROJECT_DIR$/appClientModule/heroes/EpicHero.java" />
         <option value="$PROJECT_DIR$/appClientModule/partie/Board.java" />
+        <option value="$PROJECT_DIR$/appClientModule/ia/Ia.java" />
+        <option value="$PROJECT_DIR$/appClientModule/ia/Guard_IA.java" />
         <option value="$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java" />
         <option value="$PROJECT_DIR$/appClientModule/ia/Chaman_IA.java" />
         <option value="$PROJECT_DIR$/appClientModule/ia/Orc_IA.java" />
-        <option value="$PROJECT_DIR$/appClientModule/ia/Guard_IA.java" />
         <option value="$PROJECT_DIR$/appClientModule/partie/Partie.java" />
-        <option value="$PROJECT_DIR$/appClientModule/ia/Ia.java" />
       </list>
     </option>
   </component>
@@ -545,7 +551,7 @@
       </extension>
       <option name="MAIN_CLASS_NAME" value="application.BattleMain" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-e 2" />
+      <option name="PROGRAM_PARAMETERS" value="-e 3" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -830,6 +836,14 @@
       <option name="presentableId" value="Default" />
       <updated>1481704498988</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1481712427697</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481712427697</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -845,7 +859,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.8899225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22170542" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -856,7 +870,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4868217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4868217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -869,19 +883,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java</url>
-          <line>45</line>
+          <line>43</line>
           <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/appClientModule/ia/Orc_IA.java</url>
-          <line>13</line>
-          <properties />
-          <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/appClientModule/ia/Ia.java</url>
@@ -908,13 +920,31 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java</url>
-          <line>13</line>
+          <url>file://$PROJECT_DIR$/appClientModule/ia/Orc_IA.java</url>
+          <line>19</line>
           <properties />
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/appClientModule/ia/Guard_IA.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1006,44 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appClientModule/ia/Chaman_IA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appClientModule/ia/Guard_IA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appClientModule/partie/Partie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="227" column="36" lean-forward="true" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appClientModule/ia/Ia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        <state relative-caret-position="120">
+          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1053,7 +1047,43 @@
     <entry file="file://$PROJECT_DIR$/appClientModule/ia/Orc_IA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="14" column="65" lean-forward="false" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appClientModule/partie/Partie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="278" column="34" lean-forward="false" selection-start-line="278" selection-start-column="34" selection-end-line="278" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appClientModule/ia/Ia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appClientModule/ia/Paladin_IA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appClientModule/ia/Guard_IA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

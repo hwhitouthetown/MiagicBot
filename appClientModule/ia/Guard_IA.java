@@ -11,10 +11,13 @@ public class Guard_IA extends Ia {
 		this.choisirCible(b);
 		if(this.hero.getCurrentMana() >= 2){
 			coup = "ATTACK";
-		}else if(readyToAttack){
+		}else if(readyToAttack && this.hero.getCurrentMana() >= 2){
 			coup = "ATTACK";
-		}else{
+			readyToAttack = false;
+		}else if(this.hero.getCurrentMana() < 1){
 			coup = "REST";
+		}else{
+			coup = "ATTACK";
 		}
 		if (this.hero.isYelled()){
 			coup = "DEFEND";

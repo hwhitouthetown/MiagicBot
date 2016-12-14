@@ -12,8 +12,6 @@ public class Paladin_IA extends Ia {
         this.choisirCible(b);
         if(this.hero.getCurrentMana() >= 2){
             coup = "CHARGE";
-        }else{
-            coup = "REST";
         }
         if (this.hero.isYelled()){
             coup = "DEFEND";

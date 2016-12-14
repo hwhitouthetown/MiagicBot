@@ -14,8 +14,7 @@ public class Orc_IA extends Ia {
             coup = "YELL";
         }else if(readyToAttack && this.hero.getCurrentMana() >= 1){
             coup = "ATTACK";
-        }else{
-            coup = "REST";
+            readyToAttack = false;
         }
         if (this.hero.isYelled()){
             coup = "DEFEND";

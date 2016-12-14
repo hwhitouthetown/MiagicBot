@@ -225,7 +225,7 @@ public class Partie {
 					case("ARCHER"): 	
 						ia = new Archer_IA();
 						break;
-					case("CHAMAN"): 	
+					case("CHAMAN"):
 						ia = new Chaman_IA();
 						break;
 					default : 
@@ -276,6 +276,7 @@ public class Partie {
 					
 					System.out.println("reponse après joué :" + response);
 					UpdateCoups();
+					UpdateBoard();
 				}			
 					this.nbTours++;
 			}
