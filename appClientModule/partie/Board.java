@@ -57,8 +57,6 @@ public class Board {
 
 			}	
 		}
-		
-		Thread.sleep(3000);
 	}
 
 	@Override

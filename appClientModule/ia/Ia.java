@@ -49,7 +49,7 @@ public class Ia {
 		String typeJoueur = "";
 
 		if (joueurAdv == null) {
-			typeJoueur = "CHAMAN";
+			typeJoueur = "GUARD";
 		} else if (joueurAdv.size() == 1) {
 			typeJoueur = "PALADIN";
 		} else {
