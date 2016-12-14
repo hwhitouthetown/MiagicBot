@@ -26,7 +26,11 @@ public class EpicHero {
 		this.currentLife = currentLife;
 		this.states = states;
 		this.fighterID = fighterId;
+		this.coups = new ArrayList<String>();
 	}
+	
+	
+
 	public String getFighterClass() {
 		return fighterClass;
 	}
@@ -97,10 +101,22 @@ public class EpicHero {
 	}
 	
 	public void addCoups(String coup){
+		
+		if(this.coups==null){				
+			this.coups = new ArrayList<String>();
+		}
+		
+		System.out.println("ajouter coup");
+		
 		this.coups.add(coup);
 	}
 	
 	public ArrayList<String> getCoups() {
+		
+		if(this.coups==null){				
+			this.coups = new ArrayList<String>();
+		}
+		
 		return coups;
 	}
 	

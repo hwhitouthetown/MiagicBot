@@ -44,6 +44,22 @@ public class Board {
 	public void setAdversaire(EpicHeroesLeague adversaire) {
 		this.adversaire = adversaire;
 	}
+	
+	public void afficherCoupAdversaires() throws InterruptedException{
+		
+		for(int i=0;i<adversaire.getFighters().size();i++){
+			
+			System.out.println("\n\n" + this.adversaire.getFighters().get(i).getFighterClass());
+			
+			for(String s : this.adversaire.getFighters().get(i).getCoups()){
+				
+				System.out.println("\n-"+s);
+
+			}	
+		}
+		
+		Thread.sleep(3000);
+	}
 
 	@Override
 	public String toString() {
