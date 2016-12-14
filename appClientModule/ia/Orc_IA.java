@@ -12,8 +12,10 @@ public class Orc_IA extends Ia {
         this.choisirCible(b);
         if(this.hero.getCurrentMana() >= 2 && !readyToAttack){
             coup = "YELL";
-        }else if(readyToAttack){
+        }else if(readyToAttack && this.hero.getCurrentMana() >= 1){
             coup = "ATTACK";
+        }else{
+            coup = "REST";
         }
         if (this.hero.isYelled()){
             coup = "DEFEND";
@@ -22,22 +24,23 @@ public class Orc_IA extends Ia {
 	}
 	
 	@Override
-	public void choisirCible(Board board) {
-		String response = "";
-		int indexFocus = 0;
-		ArrayList<EpicHero> equipe_adv = board.getAdversaire().getFighters();
+    public void choisirCible(Board board) {
+        String response = "";
+        int indexFocus = 0;
+        ArrayList<EpicHero> equipe_adv = board.getAdversaire().getFighters();
 
-		for (EpicHero ep : equipe_adv) {
-			if((this.focus[indexFocus].equals(ep.getFighterClass()) || ep.isCritical() || ep.isYelled())&& !ep.isDead()){
-			    if (ep.isYelled()){
-			        readyToAttack = true;
+        for (EpicHero ep : equipe_adv) {
+            for (String focus: focus){
+                if((focus.equals(ep.getFighterClass()) || ep.isCritical() || ep.isYelled())&& !ep.isDead()){
+                    if (ep.isYelled()){
+                        readyToAttack = true;
+                    }
+                    int index = equipe_adv.indexOf(ep) +1;
+                    response = "E" + index ;
                 }
-                int index = equipe_adv.indexOf(ep) +1;
-				response = "E" + index ;
-			}else{
-				indexFocus++;
-			}
-		}
-		this.target = response;
-	}
+
+            }
+        }
+        this.target = response;
+    }
 }

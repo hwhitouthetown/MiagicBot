@@ -10,10 +10,12 @@ public class Chaman_IA extends Ia{
     public void coup(Board b) {
         String coup = "REST";
         this.choisirCible(b);
-        if(this.hero.getCurrentMana() >= 2 && !readyToAttack){
-            coup = "CHARGE";
+        if(this.hero.getCurrentMana() >= 2){
+            coup = "ATTACK";
         }else if(readyToAttack){
             coup = "ATTACK";
+        }else{
+            coup = "REST";
         }
         if (this.hero.isYelled()){
             coup = "DEFEND";
@@ -28,14 +30,15 @@ public class Chaman_IA extends Ia{
         ArrayList<EpicHero> equipe_adv = board.getAdversaire().getFighters();
 
         for (EpicHero ep : equipe_adv) {
-            if((this.focus[indexFocus].equals(ep.getFighterClass()) || ep.isCritical() || ep.isYelled())&& !ep.isDead()){
-                if (ep.isYelled()){
-                    readyToAttack = true;
+            for (String focus: focus){
+                if((focus.equals(ep.getFighterClass()) || ep.isCritical() || ep.isYelled())&& !ep.isDead()){
+                    if (ep.isYelled()){
+                        readyToAttack = true;
+                    }
+                    int index = equipe_adv.indexOf(ep) +1;
+                    response = "E" + index ;
                 }
-                int index = equipe_adv.indexOf(ep) +1;
-                response = "E" + index ;
-            }else{
-                indexFocus++;
+
             }
         }
         this.target = response;

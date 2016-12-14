@@ -92,9 +92,11 @@ public class EpicHero {
 	
 	public boolean isYelled(){
 		boolean res = false;
-		for(State state : states){
-			if(state.getType().equals("SCARED")){
-				res = true;
+		if (states != null){
+			for(State state : states){
+				if(state.getType().equals("SCARED")){
+					res = true;
+				}
 			}
 		}
 		return res;

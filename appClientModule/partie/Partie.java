@@ -211,17 +211,23 @@ public class Partie {
 					switch(perso){
 					
 					case("GUARD"): 
-						ia = new Guard_IA(); 
+						ia = new Guard_IA();
+						break;
 					case("PRIEST"): 
-						ia = new Priest_IA(); 
+						ia = new Priest_IA();
+						break;
 					case("ORC"): 	
 						ia = new Orc_IA();
+						break;
 					case("PALADIN"): 	
 						ia = new Paladin_IA();
+						break;
 					case("ARCHER"): 	
 						ia = new Archer_IA();
+						break;
 					case("CHAMAN"): 	
 						ia = new Chaman_IA();
+						break;
 					default : 
 						ia = new Guard_IA(); 
 						break;

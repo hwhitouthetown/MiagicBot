@@ -7,13 +7,19 @@ public class Guard_IA extends Ia {
 
 	@Override
 	public void coup(Board b) {
-		choisirCible(b);
-		for(EpicHero ep:b.getMiagicBot().getFighters()){
-			if(ep.getCurrentLife()>this.pdvCritique){
-				this.coup = "ATTACK";
-			}
+		String coup = "REST";
+		this.choisirCible(b);
+		if(this.hero.getCurrentMana() >= 2){
+			coup = "ATTACK";
+		}else if(readyToAttack){
+			coup = "ATTACK";
+		}else{
+			coup = "REST";
 		}
-		this.coup = "ATTACK";
+		if (this.hero.isYelled()){
+			coup = "DEFEND";
+		}
+		this.coup = coup;
 	}
 
 }
