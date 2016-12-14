@@ -26,9 +26,15 @@ public class Priest_IA extends Ia {
 
 		}
 		
-		if(this.hero.isCritical() && !this.hero.isProtected() && b.canDefend()){
-        	coup = "DEFEND";
-            this.hero.addState("DEFENDING");
+		if(this.hero.isCritical() && !this.hero.isProtected() && b.canDefend() && hTarget == this.hero){
+			if(this.hero.getCurrentMana()>= 2){
+				coup = "HEAL";
+	            this.hero.addState("HEALING");
+			}else{
+				coup = "DEFEND";
+	            this.hero.addState("DEFENDING");
+			}
+        	
 
         }
 		this.coup = coup;
@@ -57,6 +63,7 @@ public class Priest_IA extends Ia {
 			if( !ep.isDead() && ep.getCurrentLife() <= ep.getMaxAvailableLife() - 8 && this.hero.getCurrentMana() >= 2){
 				if(!isDenfending || (hTarget != null && ep.getCurrentLife() < hTarget.getCurrentLife())){
 					int index = equipe.indexOf(ep) +1;
+					hTarget = ep;
 					this.isDenfending = true;
 					response = "A" + index ;
 				}

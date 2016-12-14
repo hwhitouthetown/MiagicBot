@@ -74,6 +74,9 @@ public class EpicHero {
 		this.currentLife = currentLife;
 	}
 	public ArrayList<State> getStates() {
+		if(states == null){
+			this.states = new ArrayList<State>();
+		}
 		return states;
 	}
 	public void setStates(ArrayList<State> states) {
@@ -95,6 +98,18 @@ public class EpicHero {
 		if (states != null){
 			for(State state : states){
 				if(state.getType().equals("SCARED")){
+					res = true;
+				}
+			}
+		}
+		return res;
+	}
+	
+	public boolean isBurning(){
+		boolean res = false;
+		if (states != null){
+			for(State state : states){
+				if(state.getType().equals("BURNING")){
 					res = true;
 				}
 			}

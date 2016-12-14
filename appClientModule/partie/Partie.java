@@ -200,7 +200,6 @@ public class Partie {
 			}
 
 			if(statut.equals(Status.CANPLAY)){
-				this.statut = apiCaller.GetStatus(idPartie, idEquipe);
 
 				System.out.println("Status CANPLAY, statut :" + statut + "" );
 				// On récupère le board // 
@@ -282,7 +281,6 @@ public class Partie {
 					System.out.println("reponse après joué :" + response);
 					UpdateCoups();
 					UpdateBoard();
-					this.statut = apiCaller.GetStatus(idPartie, idEquipe);
 
 				}			
 					this.nbTours++;

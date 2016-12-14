@@ -23,6 +23,9 @@ public class Archer_IA extends Ia{
         	coup = "DEFEND";
             this.hero.addState("DEFENDING");
         }
+        if(this.hero.getCurrentMana()< 1){
+        	coup = "REST";
+        }
         this.coup = coup;
 	}
 	

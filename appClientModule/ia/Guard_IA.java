@@ -55,14 +55,18 @@ public class Guard_IA extends Ia {
             }
         	indexFocus++;
         }
+
 		for (EpicHero ep : equipe) {
-			if( (ep.isCritical() || ep.isYelled())&& !ep.isDead() && this.hero.getCurrentMana() >= 2){
-				int index = equipe.indexOf(ep) +1;
-				this.isDenfending = true;
-				ep.addState("PROTECTED");
-				response = "A" + index ;
+			if( !ep.isDead() && this.hero.getCurrentMana() >= 2){
+				if(!isDenfending || (hTarget != null && ep.getCurrentLife() < hTarget.getCurrentLife())){
+					int index = equipe.indexOf(ep) +1;
+					hTarget = ep;
+					this.isDenfending = true;
+					response = "A" + index ;
+				}
 			}
 		}
+		hTarget.addState("PROTECTED");
 		this.target = response;
 	}
 }

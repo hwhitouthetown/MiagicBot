@@ -12,7 +12,7 @@ public class Ia {
 	String target;
 	EpicHero hTarget;
 	String coup;
-	String[] focus = {"ARCHER","ORC","GUARD","PRIEST","CHAMAN","PALADIN" };
+	String[] focus = {"CHAMAN","PRIEST","ARCHER","ORC","GUARD","PALADIN" };
 	public boolean readyToAttack = false;
 
 	public void coup(Board b) {
@@ -53,7 +53,7 @@ public class Ia {
 		String typeJoueur = "";
 
 		if (joueurAdv == null) {
-			typeJoueur = "GUARD";
+			typeJoueur = "CHAMAN";
 		} else if (joueurAdv.size() == 1) {
 			typeJoueur = "ARCHER";
 		} else {
